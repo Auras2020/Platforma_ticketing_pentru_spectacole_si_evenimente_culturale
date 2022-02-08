@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/register.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/manager'}">Manager</a>
+
+</nav>
+
+<form class="box">
+
+    <button type="submit"><a class = "test" href="/manager/modificare capacitate/film">film</a></button>
+    <button type="submit"><a class = "test" href="/manager/modificare capacitate/eveniment cultural">eveniment cultural</a></button>
+
+</form>
+
+</body>
+</html>

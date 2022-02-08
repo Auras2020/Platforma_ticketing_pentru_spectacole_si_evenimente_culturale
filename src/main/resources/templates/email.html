@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Email</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/table.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/login/manager'}">Manager</a>
+
+</nav>
+
+<div style="color:black; padding-top: 10px; padding-left: 430px;"><b>Gmail</b></div>
+<br>
+
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <td th:text="${from}"; style="color:black;"></td>
+            <br>
+            <td th:text="${to}"; style="color:black;"></td>
+            <br>
+            <br>
+            <td th:text="${subj}"; style="color:black;"></td>
+            <br>
+            <td th:text="${msg}"; style="color:black;"></td>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

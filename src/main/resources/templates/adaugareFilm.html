@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Adaugare film</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/register.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/manager'}">Manager</a>
+
+</nav>
+
+<form class="box">
+    <h1>Adaugare film: </h1>
+
+    <input type="text" name="nume" placeholder="nume">
+    <input type="text" name="gen" placeholder="gen">
+    <input type="text" name="varsta" placeholder="varsta">
+    <div style="color: red" th:text="${error1}"></div>
+    <input type="text" name="tip" placeholder="tip">
+    <input type="text" name="data" placeholder="data">
+    <input type="text" name="capacitate" placeholder="capacitate">
+    <div style="color: red" th:text="${error2}"></div>
+    <input type="text" name="pret" placeholder="pret">
+    <div style="color: red" th:text="${error3}"></div>
+    <input type="text" name="regizor" placeholder="regizor">
+    <input type="text" name="actori" placeholder="actori">
+    <input type="submit" value="Adaugare film">
+    <div style="color: red" th:text="${error4}"></div>
+    <div style="color: green" th:text="${succ}"></div>
+
+</form>
+
+</body>
+</html>

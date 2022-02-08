@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Evenimente culturale</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/table.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/manager'}">Manager</a>
+
+</nav>
+
+<div style="color:black; padding-top: 10px; padding-left: 230px;"><b>Evenimente culturale</b></div>
+<br>
+
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${evenimente}" class="container my-5">
+                <div class="col-md-20">
+
+                    <br>
+
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Capacitate</th>
+                            <th>Data</th>
+                            <th>Nume</th>
+                            <th>Pret</th>
+                            <th>Tip</th>
+
+                        </tr>
+                        </thead>
+                        <tbody th:each="eveniment : ${evenimente}">
+                        <tr>
+                            <td th:text="${eveniment.getId()}"></td>
+                            <td th:text="${eveniment.getCapacitate()}"></td>
+                            <td th:text="${eveniment.getData()}"></td>
+                            <td th:text="${eveniment.getNume()}"></td>
+                            <td th:text="${eveniment.getPret()}"></td>
+                            <td th:text="${eveniment.getTip()}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

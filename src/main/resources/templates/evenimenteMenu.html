@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/register.css}"/>
+</head>
+
+<body>
+
+<div th:replace="events :: nav"></div>
+
+<form class="box">
+
+    <button type="submit"><a class = "test" href="/client/evenimente culturale/vizualizare">vizualizare</a></button>
+    <button type="submit"><a class = "test" href="/client/evenimente culturale/cumparare">cumparare</a></button>
+    <button type="submit"><a class = "test" href="/client/evenimente culturale/rezervare">rezervare</a></button>
+
+</form>
+
+</body>
+</html>

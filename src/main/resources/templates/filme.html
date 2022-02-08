@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Filme</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/register.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/table.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/manager'}">Manager</a>
+
+</nav>
+
+<div style="color:black; padding-top: 10px; text-align: center;"><b>Filme</b></div>
+<br>
+
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${filme}" class="container my-5">
+                <div class="col-md-20">
+
+                    <br>
+
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Capacitate</th>
+                            <th>Data</th>
+                            <th>Gen</th>
+                            <th>Nume</th>
+                            <th>Tip</th>
+                            <th>Varsta</th>
+                            <th>Pret</th>
+                            <th>Regizor</th>
+                            <th>Actori</th>
+
+                        </tr>
+                        </thead>
+                        <tbody th:each="film : ${filme}">
+                        <tr>
+                            <td th:text="${film.getId()}"></td>
+                            <td th:text="${film.getCapacitate()}"></td>
+                            <td th:text="${film.getData()}"></td>
+                            <td th:text="${film.getGen()}"></td>
+                            <td th:text="${film.getNume()}"></td>
+                            <td th:text="${film.getTip()}"></td>
+                            <td th:text="${film.getVarsta()}"></td>
+                            <td th:text="${film.getPret()}"></td>
+                            <td th:text="${film.getRegizor()}"></td>
+                            <td th:text="${film.getActori()}"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

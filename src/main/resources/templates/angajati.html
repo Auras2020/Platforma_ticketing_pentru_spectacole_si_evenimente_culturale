@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Clienti</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/table.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/login/manager'}">Manager</a>
+
+</nav>
+
+<div style="color:black; padding-top: 10px; padding-left: 430px;"><b>Angajati</b></div>
+<br>
+
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${angajati}" class="container my-5">
+                <div class="col-md-20">
+
+                    <div>
+
+                        <br>
+
+                        <table class="table table-striped table-responsive-md" style="float: left">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nume</th>
+                                <th>Interval orar</th>
+                                <th>Post de munca</th>
+                            </tr>
+                            </thead>
+
+                            <tbody th:each="angajat : ${angajati}">
+
+                            <td style="text-align:center" th:text="${angajat.getId()}"></td>
+                            <td style="text-align:center" th:text="${angajat.getNume()}"></td>
+                            <td style="text-align:center" th:text="${angajat.getInterval_orar()}"></td>
+                            <td style="text-align:center" th:text="${angajat.getPost_de_munca()}"></td>
+
+                            </tbody>
+
+                        </table>
+
+                        <table class="table table-striped table-responsive-md" style="float: left">
+                            <thead>
+                            <tr>
+                                <th>Preturi totale inregistrate</th>
+                            </tr>
+                            </thead>
+
+                            <tbody th:each="pret : ${preturi}">
+                            <td style="text-align:center" th:text="${pret}"></td>
+                            </tbody>
+
+                        </table>
+
+                        <table class="table table-striped table-responsive-md" style="float: left">
+                            <thead>
+                            <tr>
+                                <th>Clienti inregistrati</th>
+                            </tr>
+                            </thead>
+
+                            <tbody th:each="n : ${nr}">
+                            <td style="text-align:center" th:text="${n}"></td>
+                            </tbody>
+
+                        </table>
+
+                        <table class="table table-striped table-responsive-md" style="float: left">
+                            <thead>
+                            <tr>
+                                <th>Lista clienti</th>
+                            </tr>
+                            </thead>
+
+                            <tbody th:each="client : ${clienti}">
+                            <td style="text-align:center" th:text="${client}"></td>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

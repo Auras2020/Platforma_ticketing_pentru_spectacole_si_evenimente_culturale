@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Clienti</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/table.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/login/angajat'}">Angajat</a>
+    <a th:href="@{'/login/manager'}">Manager</a>
+
+</nav>
+
+<div style="color:black; padding-top: 10px; padding-left: 430px;"><b>Vanzatori</b></div>
+<br>
+
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${vanzatori}" class="container my-5">
+                <div class="col-md-20">
+
+                    <div>
+
+                        <br>
+
+                    <table class="table table-striped table-responsive-md" style="float: left">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nume</th>
+                            <th>Interval orar</th>
+                            <th>Numar casa</th>
+                        </tr>
+                        </thead>
+
+                        <tbody th:each="vanzator : ${vanzatori}">
+
+                        <td style="text-align:center" th:text="${vanzator.getId()}"></td>
+                        <td style="text-align:center" th:text="${vanzator.getNume()}"></td>
+                        <td style="text-align:center" th:text="${vanzator.getInterval_orar()}"></td>
+                        <td style="text-align:center" th:text="${vanzator.getNumar_casa()}"></td>
+
+                        </tbody>
+
+                    </table>
+
+                    <table class="table table-striped table-responsive-md" style="float: left">
+                        <thead>
+                        <tr>
+                            <th>Incasari filme</th>
+                        </tr>
+                        </thead>
+
+                        <tbody th:each="incasare1 : ${incasari1}">
+                        <td style="text-align:center" th:text="${incasare1}"></td>
+                        </tbody>
+
+                    </table>
+
+                    <table class="table table-striped table-responsive-md" style="float: left">
+                        <thead>
+                        <tr>
+                            <th>Incasari evenimente culturale</th>
+                        </tr>
+                        </thead>
+
+                        <tbody th:each="incasare2 : ${incasari2}">
+                        <td style="text-align:center" th:text="${incasare2}"></td>
+                        </tbody>
+
+                    </table>
+
+                    <table class="table table-striped table-responsive-md" style="float: left">
+                        <thead>
+                        <tr>
+                            <th>Numar spectatori</th>
+                        </tr>
+                        </thead>
+
+                        <tbody th:each="spectator : ${spectatori}">
+                        <td style="text-align:center" th:text="${spectator}"></td>
+                        </tbody>
+
+                    </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

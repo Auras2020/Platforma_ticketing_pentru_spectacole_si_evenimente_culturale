@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spectacole</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/table.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/manager'}">Manager</a>
+
+</nav>
+
+<div style="color:black; padding-top: 10px; padding-left: 430px;"><b>Spectacole</b></div>
+<br>
+
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${spectacole}" class="container my-5">
+                <div class="col-md-20">
+
+                    <br>
+
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nume</th>
+                            <th>Artisti</th>
+                            <th>Data</th>
+                            <th>Interval orar</th>
+                            <th>Locatie</th>
+                            <th>Tip muzica</th>
+
+                        </tr>
+                        </thead>
+                        <tbody th:each="spectacol : ${spectacole}">
+                        <tr>
+                            <td th:text="${spectacol.getId()}"></td>
+                            <td th:text="${spectacol.getNume()}"></td>
+                            <td th:text="${spectacol.getArtisti()}"></td>
+                            <td th:text="${spectacol.getData()}"></td>
+                            <td th:text="${spectacol.getInterval_orar()}"></td>
+                            <td th:text="${spectacol.getLocatie()}"></td>
+                            <td th:text="${spectacol.getTip_muzica()}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

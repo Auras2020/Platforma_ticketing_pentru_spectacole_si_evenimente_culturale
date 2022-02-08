@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/register.css}"/>
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="topnav">
+    <a th:href="@{'/client'}">Client</a>
+    <a th:href="@{'/vanzator'}">Vanzator</a>
+    <a th:href="@{'/angajat'}">Angajat</a>
+    <a th:href="@{'/manager'}">Manager</a>
+
+</nav>
+
+<form class="box">
+
+    <button type="submit"><a class = "test" href="/manager/vizualizare/filme">vizualizare filme</a></button>
+    <button type="submit"><a class = "test" href="/manager/vizualizare/evenimente culturale">vizualizare evenimente culturale</a></button>
+    <button type="submit"><a class = "test" href="/manager/vizualizare/spectacole">vizualizare spectacole</a></button>
+    <button type="submit"><a class = "test" href="/manager/adaugare">adaugare eveniment</a></button>
+    <button type="submit"><a class = "test" href="/manager/stergere">stergere eveniment</a></button>
+    <button type="submit"><a class = "test" href="/manager/modificare pret">modificare pret</a></button>
+    <button type="submit"><a class = "test" href="/manager/modificare capacitate">modificare capacitate</a></button>
+
+</form>
+
+</body>
+</html>
